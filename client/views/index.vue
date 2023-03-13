@@ -50,7 +50,7 @@ const doubleCount = computed(() => count.value * 2)
 //   })
 // const token = computed(() => ctx.$store.state.token)
 watch(() => count.value, val => {
-  console.log('count is change, value is ' + val)
+  console.log('count is change, value is ' + val),
 })
 
 onMounted(function () {
