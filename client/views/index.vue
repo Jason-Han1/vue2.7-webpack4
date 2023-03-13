@@ -27,7 +27,7 @@ import {
 // export default {
 //   name: 'App',
 //   setup(props, { attrs, slots, parent, root, emit, refs }) {
-const count = ref(0)
+const count = ref(0)x
 // const { ctx } = getCurrentInstance()
 // console.log(ctx.$router.currentRoute.value)
 
@@ -50,7 +50,7 @@ const doubleCount = computed(() => count.value * 2)
 //   })
 // const token = computed(() => ctx.$store.state.token)
 watch(() => count.value, val => {
-  console.log('count is change, value is ' + val),
+  console.log('count is change, value is ' + val)
 })
 
 onMounted(function () {
