@@ -27,7 +27,7 @@ import {
 // export default {
 //   name: 'App',
 //   setup(props, { attrs, slots, parent, root, emit, refs }) {
-const count = ref(0)x
+const count = ref(0)
 // const { ctx } = getCurrentInstance()
 // console.log(ctx.$router.currentRoute.value)
 
