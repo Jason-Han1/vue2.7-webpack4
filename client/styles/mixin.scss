@@ -1,0 +1,169 @@
+/**
+*功能：清除浮动
+*用法：
+************************
+.container-with-floated-children {
+  @include clearfix();
+}
+**********************
+**/
+
+@mixin clearfix() {
+  &::before,
+  &::after {
+    content: "";
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: "";
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+/**
+*功能：媒体查询1200
+*用法：
+************************
+.sidebar {
+  float:left;
+  @include gm-small {
+    float: none;
+  }
+}
+**********************
+**/
+
+@mixin gm-small {
+  @media only screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+/**
+*功能：过度效果
+*用法：
+************************
+a {
+  color: gray;
+  @include transition(color .3s ease);
+  &:hover {
+    color: black;
+  }
+}
+**********************
+**/
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+/**
+*功能：link后，的color值
+*用法：
+************************
+a{
+  @include link-color(#fff, #eee, #ddd)
+}
+**********************
+**/
+
+@mixin link-color($normal, $hover, $active) {
+  color: $normal;
+
+  &:hover {
+    color: $hover;
+  }
+
+  &:active {
+    @if ($active !=null & & $active !='undefined') {
+      color: $active;
+    }
+
+    @else {
+      color: $hover;
+    }
+  }
+}
+
+/**
+*功能：link后的 background-color 背景值
+*用法：
+************************
+a{
+  @include link-bg(#fff, #eee, #ddd)
+}
+**********************
+**/
+
+@mixin link-bg($normal, $hover, $active) {
+  background-color: $normal;
+
+  &:hover {
+    background-color: $hover;
+  }
+
+  &:active {
+    @if ($active !=null & & $active !='undefined') {
+      background-color: $active;
+    }
+
+    @else {
+      background-color: $hover;
+    }
+  }
+}
+
+// 边框圆角
+@mixin gm-radius($angle) {
+  -moz-border-radius: $angle;
+  -webkit-border-radius: $angle;
+  border-radius: $angle;
+}
+
+// 盒模型border-box
+@mixin gm-border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// 盒模型border-box
+@mixin gm-content-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// --最新--
+@mixin border-radius($angle) {
+  -moz-border-radius: $angle;
+  -webkit-border-radius: $angle;
+  border-radius: $angle;
+}
+
+@mixin border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}

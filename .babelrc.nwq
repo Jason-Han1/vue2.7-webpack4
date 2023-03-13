@@ -1,0 +1,13 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+      "modules": false,
+      "targets": {
+        "browsers": ["chrome 65"]
+      }
+    }],
+   [ "@babel/preset-stage-2"]
+  ],
+  "plugins": ["transform-vue-jsx", ["@babel/plugin-transform-runtime"]
+  ]
+}

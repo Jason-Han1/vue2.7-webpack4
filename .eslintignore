@@ -1,0 +1,11 @@
+# /build/
+# /dist/
+# /*.js
+# server
+**test/**
+**/font/**
+node_modules/**
+page/**
+server/public/**
+client/views/uiBaseDoc/**
+client/views/multipleCloud/**

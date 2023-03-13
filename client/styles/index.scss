@@ -1,0 +1,55 @@
+@import './reset.scss';
+@import './variables.scss';
+@import './mixin.scss';
+
+// 公共部分
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  overflow-y: hidden;
+  min-width: 1200px; //overflow: hidden;
+  overflow-x: auto;
+  background-color: #f3f6f9;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+.clearfix::after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+// 色值基础
+.cl_success {
+  color: #67c23a;
+}
+
+.cl_warning {
+  color: #e6a23c;
+}
+
+.cl_danger {
+  color: #f56c6c;
+}
+
+.cl_info {
+  color: #909399;
+}
