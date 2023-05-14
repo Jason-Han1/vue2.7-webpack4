@@ -10,6 +10,7 @@
       <!-- <button @click="update">update a</button> -->
       <br>
       <!-- <em>token: {{token}}</em> -->
+      <img v-imageLazy="{nolazy: false}" data-src="https://th.bing.com/th/id/OIP.O1CyeKs-ES3CZTfWbTjA2gHaEo?pid=ImgDet&rs=1" class="image" />
     </div>
   </div>
 </template>
@@ -85,6 +86,9 @@ onMounted(function () {
 // }
 </script>
 <style lang="scss" scoped>
+.image {
+  margin-top: 1000px;
+}
 .wrap {
   position: absolute;
   top: 0;

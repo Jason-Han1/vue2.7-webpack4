@@ -14,6 +14,31 @@ function debounce1(fn, delay = 500) {
     }, delay);
   };
 }
+export const imageLazy = {
+  bind(el, binding, vnode) {
+    // const placehold = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+    console.log(binding);
+    if (binding.value && binding.value.nolazy) {
+      const { nolazy } = binding.value
+      if (nolazy) return (el.src = el.dataset.src || placehold)
+    }
+    // el.src = placehold
+    const obServer = new IntersectionObserver(entries => {
+      // 如果 intersectionRatio 为 0，则目标在视野外，
+      // 不需要做任何事情。
+      if (entries.find(v => v.intersectionRatio)) {
+        el.src = el.dataset.src || placehold
+        obServer.unobserve(el)
+      }
+    })
+    obServer.observe(el)
+  },
+  update(el, binding, vnode) {},
+  unbind(el) {},
+  inserted(el, binding) {},
+  componentUpdated(el, binding) {}
+};
+
 export const trim = {
   bind(el, binding, vnode, oldVnode) {
     const inputEl = el.children[0];
